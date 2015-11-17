@@ -22,20 +22,34 @@
 /* Not required for template or sticky footer method. */
 
 html, body {
- background: #fff;
- font-family: 'Open Sans', sans-serif;
+  background: #f0efe7;
+  color: #4E4428;
+  font-family: 'Roboto Slab', serif;
 }
 
-body {
- background: #fff;
+a {
+  color: #0388a6;
+}
+
+a:hover {
+  color: #0388a6;
+  text-decoration: none;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
 body > .container {
- margin-top: 30px;
+  margin-top: 30px;
 }
 
 .container h2 {
-  font-size: 24px;
+  font-size: 22px;
   margin-top: 60px;
   padding-left: 15px;
 }
@@ -49,46 +63,108 @@ body > .container {
 -------------------------------------------------- */
 
 .navbar-default {
-  background: #fff;
+  background: #f0efe7;
   border-bottom: none;
   padding-bottom: 10px;
   padding-top: 10px;
 }
 
 .navbar-default .container {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #4E4428;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
 }
 
 .navbar-default .navbar-nav {
   border-bottom: none;
-  padding-top: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 3px;
   text-transform: uppercase;
 }
 
 .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: #337ab7;
-  font-family: 'Oswald', sans-serif;
-  font-size: 28px;
-  font-weight: 400;
+  color: #f14e32;
+  font-size: 22px;
+  font-weight: 700;
 }
 
 .navbar-default .navbar-nav >li > a:hover {
-  color: #337ab7;
+  color: #0388a6;
   background: transparent;
   text-decoration: none;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
 .navbar-default .navbar-nav >li > a, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus {
-  color: #000;
+  color: #4E4428;
   background: transparent;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: transparent;
+  color: #4E4428;
 }
 
 /* Jumbotron
 -------------------------------------------------- */
 
 .jumbotron {
-  background: #fff;
-  color: #000;
+  background: #f0efe7;
+  color: #4E4428;
+}
+
+
+/* Messages
+-------------------------------------------------- */
+
+.alert, .alert-success, .alert-warning, .alert-danger {
+  margin-top: 40px;
+}
+
+/* Devise views
+-------------------------------------------------- */
+
+.form-div {
+  max-width: 100%;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+}
+
+.form-div h2 {
+  margin-left: -15px;
+}
+
+.form-div .form-signin-heading,
+.form-div .checkbox {
+  margin-bottom: 10px;
+}
+
+.form-div input[type="text"],
+.form-div input[type="email"],
+.form-div input[type="password"] {
+  font-size: 14px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+  width: 300px;
+}
+
+.form-div .btn {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.form-div label {
+  margin-top: 10px;
 }
 
 /* Sticky footer styles
@@ -113,7 +189,7 @@ footer {
 }
 
 footer > .container {
-  border-top: 1px solid #000;
+  border-top: 1px solid #4E4428;
   padding-bottom: 30px;
   padding-top: 30px;
 }
