@@ -1,6 +1,14 @@
 <div class="container">
   <div class = "row">
     <h2>Wikis</h2>
-    <p>Find me in app/views/wikis/index.html.erb</p>
+    <% @wikis.each do |wiki| %>
+      <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading">
+            <%= link_to wiki.title, wiki %>
+          </h4>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

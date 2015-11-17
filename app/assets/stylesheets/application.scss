@@ -45,12 +45,11 @@ a:hover {
 }
 
 body > .container {
-  margin-top: 30px;
+  padding-top: 50px;
 }
 
 .container h2 {
-  font-size: 22px;
-  margin-top: 60px;
+  font-size: 20px;
   padding-left: 15px;
 }
 
@@ -114,20 +113,27 @@ body > .container {
   color: #4E4428;
 }
 
+/* Wiki Index
+-------------------------------------------------- */
+
+.media-heading a {
+  font-size: 14px;
+  margin-left: 15px;
+}
+
+/* Forms
+-------------------------------------------------- */
+
+.radio, .checkbox {
+  margin-left: 20px;
+}
+
 /* Jumbotron
 -------------------------------------------------- */
 
 .jumbotron {
   background: #f0efe7;
   color: #4E4428;
-}
-
-
-/* Messages
--------------------------------------------------- */
-
-.alert, .alert-success, .alert-warning, .alert-danger {
-  margin-top: 40px;
 }
 
 /* Devise views
