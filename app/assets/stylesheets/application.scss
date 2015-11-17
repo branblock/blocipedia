@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+html, body {
+ background: #fff;
+ font-family: 'Open Sans', sans-serif;
+}
+
+body {
+ background: #fff;
+}
+
+body > .container {
+ margin-top: 30px;
+}
+
+.container h2 {
+  font-size: 24px;
+  margin-top: 60px;
+  padding-left: 15px;
+}
+
+.container p {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Navigation
+-------------------------------------------------- */
+
+.navbar-default {
+  background: #fff;
+  border-bottom: none;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.navbar-default .container {
+  border-bottom: 1px solid #000;
+}
+
+.navbar-default .navbar-nav {
+  border-bottom: none;
+  padding-top: 4px;
+  text-transform: uppercase;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #337ab7;
+  font-family: 'Oswald', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.navbar-default .navbar-nav >li > a:hover {
+  color: #337ab7;
+  background: transparent;
+  text-decoration: none;
+}
+
+.navbar-default .navbar-nav >li > a, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus {
+  color: #000;
+  background: transparent;
+}
+
+/* Jumbotron
+-------------------------------------------------- */
+
+.jumbotron {
+  background: #fff;
+  color: #000;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+footer {
+  bottom: 0;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  position: absolute;
+  width: 100%;
+}
+
+footer > .container {
+  border-top: 1px solid #000;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
