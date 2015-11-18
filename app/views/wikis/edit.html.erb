@@ -2,7 +2,7 @@
   <div class = "row">
     <h2>Edit Wiki</h2>
     <p><%= link_to "Guidelines for Wikis", '#'%> |
-    <%= link_to "Return to All Wikis", wikis_path %></p>
+    <%= link_to "<< Return to All Wikis", wikis_path %></p>
       <div class="col-md-12">
         <%= form_for @wiki do |f| %>
           <div class="form-group">
@@ -13,11 +13,13 @@
             <%= f.label :body %>
             <%= f.text_area :body, rows: 25, class: 'form-control', placeholder: "Enter wiki body" %>
           </div>
-          <div class="form-group">
-            <%= f.label :public, class: 'checkbox' do %>
-            <%= f.check_box :private %> Private Wiki
-            <% end %>
-          </div>
+          <% if (current_user.premium? && wiki.user == current_user) || current_user.admin? %>
+            <div class="form-group">
+              <%= f.label :public, class: 'checkbox' do %>
+              <%= f.check_box :private %> Private Wiki
+              <% end %>
+            </div>
+          <% end %>
           <div class="form-group">
             <%= f.submit "Save", class: 'btn btn-default' %>
           </div>
