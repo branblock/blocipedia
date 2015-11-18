@@ -23,4 +23,8 @@ class User < ActiveRecord::Base
   def premium?
     role == 'premium'
   end
+
+  def downgrade_role
+    current_user.update_attribute(:role, "standard")
+  end
 end
