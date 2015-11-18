@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row" align="center">
+    <%= form_tag charges_path do %>
+      <h2 style="padding-left: 0">Go Premium.<br><br>
+      Enjoy private wikis.<br><br>
+      Be happier.<br><br>
+      One time charge of $15.00. That's it.<br><br></h2>
+      <script class='stripe-button' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount=<%= @stripe_btn_data[:amount] %> data-description="<%= @stripe_btn_data[:description] %>" ></script>
+    <% end %>
+  </div>
+</div>

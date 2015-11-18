@@ -19,10 +19,12 @@ end
 
 # Use Bootstrapp for styling
 gem 'bootstrap-sass'
-# User Devise for authentication
+# Use Devise for authentication
 gem 'devise'
-# User Pundit for authorization
+# Use Pundit for authorization
 gem 'pundit'
+# Use Stripe for payments
+gem 'stripe'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
