@@ -16,6 +16,6 @@ class WikiPolicy < ApplicationPolicy
   end
 
   def show?
-    record.private == false || ((record.private == true && record.user == user) || user.premium? || user.admin?)
+    record.private? == false || ((record.private? == true && record.user == user) || user.premium? || user.admin?)
   end
 end

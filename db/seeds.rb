@@ -29,8 +29,8 @@ admin.save!
 
 50.times do
   Wiki.create!(
-    title: Faker::Lorem.sentence(1, true),
-    body: Faker::Lorem.paragraph(10, true, 5)
+    title: Faker::Lorem.sentence,
+    body: Faker::Lorem.paragraph
   )
 end
 

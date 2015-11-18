@@ -1,6 +1,6 @@
 <div class="container">
   <div class="form-div">
-    <h2>Edit Your Account <%= resource_name.to_s.humanize %></h2>
+    <h2>Edit Your Account (<%= current_user.name %>)</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
@@ -38,19 +38,18 @@
         <strong>✮ Create private wikis!&nbsp&nbsp<%= link_to "Upgrade to Premium >>", new_charge_path  %></strong>
       <% end %>
 
-      <% if current_user.premium? %>
-        <p style="padding-left: 0">I no longer want to have private wikis.&nbsp&nbsp<%= link_to "Downgrade to a standard account >>", users_downgrade_path  %></p>
-      <% end %>
-
       <div class="actions">
         <%= f.submit "Update Your Account", class: "btn btn-default" %>
       </div>
     <% end %>
 
     <div>
-      <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+      <% if current_user.premium? %>
+        <%= link_to "Downgrade to a standard account", users_downgrade_path, data: { confirm: "All your private wikis will become public. Are you sure?" } %><br />
+      <% end %>
+      <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %><br />
+      <%= link_to "<< Back", :back %>
     </div>
-    <%= link_to "<< Back", :back %>
 
   </div>
 </div>

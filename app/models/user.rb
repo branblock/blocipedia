@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
   end
 
   def downgrade_role
-    current_user.update_attribute(:role, "standard")
+    update_attribute(:role, "standard")
+  end
+
+  def set_public
+    wiki.private == false
   end
 end
