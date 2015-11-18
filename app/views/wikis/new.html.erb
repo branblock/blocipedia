@@ -13,13 +13,7 @@
             <%= f.label :body %>
             <%= f.text_area :body, rows: 25, class: 'form-control', placeholder: "Enter wiki body" %>
           </div>
-          <% if (current_user.premium? && @wiki.user == current_user) || current_user.admin? %>
-            <div class="form-group">
-              <%= f.label :public, class: 'checkbox' do %>
-              <%= f.check_box :private %> Private Wiki
-              <% end %>
-            </div>
-          <% end %>
+          <%= render partial: 'form', locals: {f: f} %>
           <div class="form-group">
             <%= f.submit "Save", class: 'btn btn-default' %>
           </div>

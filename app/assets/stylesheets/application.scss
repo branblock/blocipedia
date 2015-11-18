@@ -33,7 +33,7 @@ a {
 }
 
 a:hover {
-  color: #0388a6;
+  color: #4E4428;
   text-decoration: none;
   -webkit-transition-property: color;
   -moz-transition-property: color;
@@ -43,6 +43,11 @@ a:hover {
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
+}
+
+a:focus {
+  color: #0388a6;
+  text-decoration: none;
 }
 
 body {
