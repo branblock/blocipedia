@@ -2,8 +2,12 @@
   <div class = "row">
     <h2><%= @wiki.title %></h2>
     <p><%= @wiki.body %></p>
-    <p><%= link_to "Edit", edit_wiki_path(@wiki) %> |
-    <%= link_to "Delete", @wiki, method: :delete, data: { confirm: "Are you sure?" } %> |
-    <%= link_to "Return to All Wikis", wikis_path %></p>
+    <p><% if policy(@wiki).update? %>
+      <p><%= link_to "Edit Wiki", edit_wiki_path(@wiki) %>
+    <% end %>
+    <% if policy(@wiki).destroy? %>
+      | <%= link_to "Delete Wiki", @wiki, method: :delete, data: { confirm: "Are you sure?" } %></p>
+    <% end %>
+    <p><%= link_to "<< Return to All Wikis", wikis_path %></p>
   </div>
 </div>

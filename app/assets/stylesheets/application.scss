@@ -25,6 +25,7 @@ html, body {
   background: #f0efe7;
   color: #4E4428;
   font-family: 'Roboto Slab', serif;
+  font-size: 14px;
 }
 
 a {
@@ -44,8 +45,8 @@ a:hover {
   transition-duration: 0.3s;
 }
 
-body > .container {
-  padding-top: 50px;
+body {
+  padding-top: 70px;
 }
 
 .container h2 {
@@ -77,10 +78,8 @@ body > .container {
 
 .navbar-default .navbar-nav {
   border-bottom: none;
-  font-size: 12px;
   font-weight: bold;
   padding-top: 3px;
-  text-transform: uppercase;
 }
 
 .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -131,9 +130,18 @@ body > .container {
 /* Jumbotron
 -------------------------------------------------- */
 
+.container .jumbotron, .container-fluid .jumbotron {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .jumbotron {
   background: #f0efe7;
   color: #4E4428;
+}
+
+.jumbotron p {
+  font-size: 16px;
 }
 
 /* Devise views
