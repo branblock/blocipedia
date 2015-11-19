@@ -1,7 +1,8 @@
 class WikisController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @wikis = Wiki.all
-    authorize @wikis
+    @wikis = policy_scope(Wiki)
   end
 
   def show
@@ -26,6 +27,7 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+    @users = User.all
   end
 
   def update
