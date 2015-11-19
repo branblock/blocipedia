@@ -59,9 +59,18 @@ body {
   padding-left: 15px;
 }
 
+.container h3 {
+  font-size: 18px;
+}
+
 .container p {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.media {
+  line-height: .5;
+  margin-top: 0;
 }
 
 /* Navigation
@@ -184,6 +193,13 @@ body {
 
 .form-div label {
   margin-top: 10px;
+}
+
+/* Collaborators list
+-------------------------------------------------- */
+
+.collab-list ul {
+  padding-left: 18;
 }
 
 /* Sticky footer styles
