@@ -1,17 +1,33 @@
+<p style="padding-left: 0"><strong>Wiki Collaborators:</strong></p>
+
 <% if current_user.admin? || (current_user.premium? && wiki.user == current_user) %>
-  <div class="collab-list">
-    <strong>Collaborators on this wiki:</strong>
-      <ul class="list-unstyled">
-      <% @users.each do |user| %>
-        <li><%= user.name %> (<i><%= user.email %></i>) |
-          <% if @wiki.users.include?(user) %>
-            <% collaborator = Collaborator.where(user_id: user.id, wiki_id: @wiki.id).first %>
-            <%= link_to "Delete collaborator", wiki_collaborator_path(wiki_id: @wiki.id, user_id: user.id), method: :delete %>
-          <% else %>
-            <%= link_to "Add as collaborator", wiki_collaborators_path(wiki_id: @wiki.id, user_id: user.id), method: :post %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="input-group">
+        <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add or remove collaborators on this wiki<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <% @users.each do |user| %>
+            <% if @wiki.users.include?(user) %>
+              <% collaborator = Collaborator.where(user_id: user.id, wiki_id: @wiki.id).first %>
+              <li><span><%= user.name %> | <%= link_to "Delete", wiki_collaborator_path(wiki_id: @wiki.id, user_id: user.id), method: :delete %></span></li>
+            <% else %>
+              <li><span><%= user.name %> | <%= link_to "Add", wiki_collaborators_path(wiki_id: @wiki.id, user_id: user.id), method: :post %></span></li>
+            <% end %>
           <% end %>
-        </li>
-      <% end %>
-    </ul>
+        </ul>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
+
+<div class="row">
+  <div class="col-md-6">
+    <% wiki.collaborators.each do |collaborator| %>
+      <% unless wiki.collaborators.empty? != false %>
+        <p style="padding-left: 0; line-height: 1"><%= collaborator.user.name %></p>
+    <% end %>
+  <% end %>
+  </div>
+</div>

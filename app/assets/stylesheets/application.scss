@@ -198,9 +198,15 @@ body {
 /* Collaborators list
 -------------------------------------------------- */
 
-.collab-list ul {
-  padding-left: 18;
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
+
+.input-group-btn .dropdown-menu {
+  padding-left: 5px;
+}
+
 
 /* Sticky footer styles
 -------------------------------------------------- */
