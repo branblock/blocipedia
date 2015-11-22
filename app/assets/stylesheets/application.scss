@@ -68,11 +68,6 @@ body {
   padding-right: 15px;
 }
 
-.media {
-  line-height: .5;
-  margin-top: 0;
-}
-
 /* Navigation
 -------------------------------------------------- */
 
@@ -131,7 +126,6 @@ body {
 
 .media-heading a {
   font-size: 14px;
-  margin-left: 15px;
 }
 
 /* Forms
@@ -141,21 +135,60 @@ body {
   margin-left: 20px;
 }
 
-/* Jumbotron
+/* Jumbotron/Home page
 -------------------------------------------------- */
 
 .container .jumbotron, .container-fluid .jumbotron {
+  background: #f0efe7;
   padding-left: 0;
   padding-right: 0;
 }
 
 .jumbotron {
-  background: #f0efe7;
   color: #4E4428;
 }
 
 .jumbotron p {
   font-size: 16px;
+}
+
+.home-form-div {
+  max-width: 100%;
+  padding: 19px 10px 29px;
+  margin: 0 auto 20px;
+}
+
+.home-form-div h3 {
+  font-size: 18px;
+}
+
+.home-form-div .form-signin-heading,
+.home-form-div .checkbox {
+  margin-bottom: 10px;
+}
+
+.home-form-div input[type="text"],
+.home-form-div input[type="email"],
+.home-form-div input[type="password"] {
+  font-size: 14px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+  width: 300px;
+}
+
+.home-form-div .btn {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.home-form-div label {
+  margin-top: 10px;
+}
+
+.panel-default {
+  border: 1px solid #f14e32;
+  margin-top: 40px;
 }
 
 /* Devise views
@@ -232,5 +265,5 @@ footer {
 footer > .container {
   border-top: 1px solid #4E4428;
   padding-bottom: 30px;
-  padding-top: 30px;
+  padding-top: 10px;
 }
