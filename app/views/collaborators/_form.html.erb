@@ -1,19 +1,12 @@
-<p style="padding-left: 0"><strong>Wiki Collaborators:</strong></p>
-
 <% if current_user.admin? || (current_user.premium? && wiki.user == current_user) %>
   <div class="row">
     <div class="col-md-6">
       <div class="input-group">
         <div class="input-group-btn">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add or remove collaborators on this wiki<span class="caret"></span></button>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add collaborators on this wiki<span class="caret"></span></button>
         <ul class="dropdown-menu">
           <% @users.each do |user| %>
-            <% if @wiki.users.include?(user) %>
-              <% collaborator = Collaborator.where(user_id: user.id, wiki_id: @wiki.id).first %>
-              <li><span><%= user.name %> | <%= link_to "Delete", wiki_collaborator_path(wiki_id: @wiki.id, user_id: user.id), method: :delete %></span></li>
-            <% else %>
-              <li><span><%= user.name %> | <%= link_to "Add", wiki_collaborators_path(wiki_id: @wiki.id, user_id: user.id), method: :post %></span></li>
-            <% end %>
+            <li><span><%= user.name %> | <%= link_to "Add", wiki_collaborators_path(wiki_id: @wiki.id, user_id: user.id), method: :post %></span></li>
           <% end %>
         </ul>
         </div>
@@ -22,12 +15,22 @@
   </div>
 <% end %>
 
-<div class="row">
-  <div class="col-md-6">
-    <% wiki.collaborators.each do |collaborator| %>
-      <% unless wiki.collaborators.empty? != false %>
-        <p style="padding-left: 0; line-height: 1"><%= collaborator.user.name %></p>
-    <% end %>
-  <% end %>
+<% if wiki.collaborators.count > 0 %>
+  <div class="row">
+    <div class="col-md-6">
+        <p style="padding-left: 0">
+          <strong>Wiki Collaborators:</strong>
+        </p>
+      <% @users.each do |user| %>
+        <% if @wiki.users.include?(user) %>
+          <p style="padding-left: 0; line-height: 1">
+          <%= user.name %>
+          <% if current_user.admin? || (current_user.premium? && wiki.user == current_user) %>
+            | <%= link_to "Remove", wiki_collaborator_path(wiki_id: @wiki.id, user_id: user.id), method: :delete %>
+          <% end %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>

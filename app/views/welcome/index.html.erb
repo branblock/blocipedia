@@ -1,18 +1,73 @@
-<!-- /* Jumbotron */ -->
 <div class="container">
   <div class = "row">
     <div class = "jumbotron">
       <div class="col-md-6">
-        <p><span style="color: #f14e32">Blockipedia</span> is a wiki dedicated to all things "block". How do you make a <a href="#">cinderblock</a>? What's the origin of the phrase "around the <a href="#">block</a>"? What's a code <a href="#">block</a> in Ruby?</p>
-        <p>Create, read and update markdown wikis about these and other fascinating "blocks". Blockipedia is easy to use and it's free to join. Upgrade to premium and make your wikis private.</p>
+        <p><span style="color: #f14e32">Blockipedia</span> is a free wiki resource dedicated to all things "block". Create, read and update markdown wikis about fascinating "blocks", like these:</p>
+        <p>■ How do you make a <a href="#">cinder<i>block</i></a>?<br />■ What's the origin of the phrase<a href="#">"around the <i>block</i></a>"?<br />■ What's a <a href="#">code <i>block</i> in Ruby</a>?</p>
+        <p>Blockipedia is easy to use and it's totally free to join. Of course, you can pay if you want. And we'll give you something for it! Upgrade to a premium membership and enjoy private wikis.</p>
       </div>
-      <div class="col-md-6">
-        <p>[Featured Post goes here]</p>
-      </div>
-      <div class="col-md-12">
-        <p align="center"><span style="font-size: 28px; text-decoration: underline">Become a <a href="#">Blockhead</a> today!</span></p>
-        <p align="center"><%= link_to "Create A Free Account", new_user_registration_path, class: "btn btn-default btn-lg" %></p>
+      <div class="col-md-6" align="center">
+        <%= image_tag "cubes.png" %>
       </div>
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="col-md-6">
+        <div class="home-form-div">
+    <h2 style="padding-left: 0">I like it! Sign me up for free!</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Create Account", class: "btn btn-default" %>
+      </div>
+    <% end %>
+
+    Have an account? <%= link_to "Log in", new_session_path(resource_name) %><br />
+    Forgot your password? Really? Ok...<%= link_to "Click here", new_password_path(resource_name) %><br />
+    Need another email confirmation? We'll be nice & resend it...<%= link_to "Click here", new_confirmation_path(resource_name) %><br />
+    </div>
+  </div>
+
+  <div class="col-md-6" style="background: #f0efe7; margin-top: 10px; padding-bottom: 10px; padding-top: 10px">
+      <h2>I like it! It's cool! But I'm worried about others seeing some or all of my wikis.</h2>
+      <p>Well, well, this is getting interesting! Don't worry, we understand that not everything is for everyone. I mean do you really want to explain the origin of "blockhead"? Can't that get kind of personal? That's why we created the "premium" option. For a nominal fee of $9.99 per month, you can get access to the entire site, and create private wikis.</p>
+      <p>Sounds awesome? Go premium by following these simple steps:</p>
+      <p><span style="font-size:28px">Step 1</span></p><p>Create a free account (to the left)</p>
+      <p><span style="font-size:28px">Step 2</span></p><p>Click on the "Edit Profile" link (it'll be in the navigation after you sign in, in the dropdown menu with your name)</p>
+      <p><span style="font-size:28px">Step 3</span></p><p>Click on the "Go Premium" link</p>
+      <p><span style="font-size:28px">Step 4</span></p><p>Pay us!</p>
+  </div>
+
+
+    </div>
+  </div>
+<div>
