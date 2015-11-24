@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
     @wikis = Wiki.where(private: true, user_id: current_user.id)
     @wikis.each do |wiki|
-      wiki.set_public
+      wiki.update_attribute(:private, false)
       wiki.save!
     end
 
