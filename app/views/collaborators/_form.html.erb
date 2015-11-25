@@ -6,7 +6,9 @@
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add collaborators on this wiki<span class="caret"></span></button>
         <ul class="dropdown-menu">
           <% @users.each do |user| %>
-            <li><span><%= user.name %> | <%= link_to "Add", wiki_collaborators_path(wiki_id: @wiki.id, user_id: user.id), method: :post %></span></li>
+            <% if user != current_user %>
+              <li><span><%= user.name %> | <%= link_to "Add", wiki_collaborators_path(wiki_id: @wiki.id, user_id: user.id), method: :post %></span></li>
+            <% end %>
           <% end %>
         </ul>
         </div>
